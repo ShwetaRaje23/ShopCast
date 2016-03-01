@@ -52,6 +52,16 @@ app.use(function(req, res, next) {
     next(err);
 });
 
+// this is the post request for the caster
+//app.post('/api/cast', function(req, res) {
+//
+//  //res.render('index', { title: 'Express' });
+//  console.log("printing the json for caster");
+//  res.send("Got a POST REQUEST");
+//  console.log(res);
+//
+//});
+
 // error handlers
 
 // development error handler
