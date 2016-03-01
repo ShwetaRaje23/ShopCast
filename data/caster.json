@@ -4,7 +4,7 @@
 		//The user id
 		"id":1,
 		//The list of the ids of people this person is getting stuff for
-		"list":[2,3],
+		"list":[2],
 		//The address of the person
 		"place":"100 Midtown",
 		//The name of the person

@@ -1,0 +1,25 @@
+//The person who asks a person to get stuffs for him/her
+"keeper""[
+	{
+		//The id of the keeper
+		"id":1,
+		//The list of the broadcast ids of people who are going to get stuff for this guy
+		"bid":[],
+		//The items this user requires
+		"items":0,
+		//If this person's request has been honored
+		"accepted":false
+	},
+	{
+		"id":2,
+		"bid":[1],
+		"items":5,
+		"accepted":true
+	},
+	{
+		"id":3,
+		"bid":[2],
+		"items":2,
+		"accepted":true
+	}
+] 
