@@ -1,0 +1,39 @@
+//The person who goes out for shopping
+"caster""[
+	{
+		//The user id
+		"id":1,
+		//The list of the ids of people this person is getting stuff for
+		"list":[2,3],
+		//The address of the person
+		"place":"100 Midtown",
+		//The name of the person
+		"name":"Harry",
+		//The number of items this person is willing to buy
+		"items":8,
+		//The boolean value represents if the user is willing to dropoff or not. True for yes, False for no dropoff
+		"dropoff":true,
+		//the charge this person charges to the people he is buying stuff for
+		"charge":3
+	},
+	{
+		"id":2,
+		"list":[3],
+		"place":"Alexander on Ponce",
+		"name":"Ron",
+		"items":10,
+		"dropoff":false,
+		"charge":2
+	},
+	{
+		"id":3,
+		"list":[],
+		"place":"Solace on Peachtree",
+		"name":"Hermione",
+		"items":5,
+		"dropoff":true,
+		"charge":4
+	}
+] 
+
+
