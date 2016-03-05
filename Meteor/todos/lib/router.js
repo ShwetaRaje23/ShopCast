@@ -33,6 +33,7 @@ if (Meteor.isClient) {
 Router.route('join');
 Router.route('signin');
 Router.route('detail');
+Router.route('cast');
 
 Router.route('listsShow', {
   path: '/lists/:_id',
