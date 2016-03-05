@@ -1,0 +1,42 @@
+<template name="detail">
+  <div class="page auth">
+    <nav>
+      <div class="nav-group">
+        <a href="#" class="js-menu nav-item"><span class="icon-list-unordered"></span></a>
+      </div>
+    </nav>
+
+    <div class="content-scrollable">
+      <div class="wrapper-auth">
+        <h1 class="title-auth">Account Details</h1>
+
+        <form>
+          <!-- {{#if errorMessages}}
+            <div class="list-errors">
+              {{#each errorMessages}}
+                <div class="list-item">{{this}}</div>
+              {{/each}}
+            </div>
+          {{/if}} -->
+
+          <div class="input-symbol" style="border-bottom: 20px">
+            <input type="text" name="username" placeholder="Username"  />
+            <span class="icon-user-add" title="Your Email"></span>
+          </div>
+
+          <div class="input-symbol ">
+            <input type="text" name="location" placeholder="Location" />
+            <!-- <span class="icon-lock" title="Password"></span> -->
+          </div>
+
+          <div class="input-symbol ">
+            <input type="text" name="credit" placeholder="Credit" />
+            <!-- <span class="icon-lock" title="Confirm Password"></span> -->
+          </div>
+
+          <button type="submit" class="btn-primary">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>
