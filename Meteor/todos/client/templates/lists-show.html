@@ -1,5 +1,6 @@
 <template name="listsShow">
   <div class="page lists-show">
+    {{#if currentUser}}
     <nav class="js-title-nav">
       {{#if editing}}
         <form class="js-edit-form list-edit-form">
@@ -71,5 +72,6 @@
           </div>
       {{/if}}
     </div>
+    {{/if}}
   </div>
 </template>
