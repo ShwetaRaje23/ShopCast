@@ -56,6 +56,7 @@ Router.route('listsShow', {
 Router.route('home', {
   path: '/',
   action: function() {
-    Router.go('listsShow', Lists.findOne());
+    // Router.go('listsShow', Lists.findOne());
+    Router.go('signin');
   }
 });
