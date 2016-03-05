@@ -8,6 +8,6 @@ urlpatterns = [
     url(r'^$', 'shopcast_server.views.home', name='home'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^register/', 'shopcast_server.views.register', name='register'),
-    url(r'^cast/', 'shopcast_server.views.cast', name='cast')
+    url(r'^cast/', 'shopcast_server.views.cast', name='cast'),
 
 ]
