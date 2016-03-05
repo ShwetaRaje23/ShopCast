@@ -72,8 +72,8 @@ var deleteList = function(list) {
       Todos.remove(todo._id);
     });
     Lists.remove(list._id);
-
-    Router.go('home');
+    Router.go('listsShow', Lists.findOne());
+    //Router.go('home');
     return true;
   } else {
     return false;
@@ -169,6 +169,7 @@ Template.listsShow.events({
       checked: false,
       createdAt: new Date()
     });
+    alert('Todo inserted');
     Lists.update(this._id, {$inc: {incompleteCount: 1}});
     $input.val('');
   }
