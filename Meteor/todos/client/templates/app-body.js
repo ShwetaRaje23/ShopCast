@@ -119,6 +119,9 @@ Template.appBody.events({
     if (current.route.name === 'listsShow' && current.data().userId) {
       Router.go('listsShow', Lists.findOne({userId: {$exists: false}}));
     }
+    else {
+      Router.go('signin');
+    }
   },
 
   'click .js-new-list': function() {
