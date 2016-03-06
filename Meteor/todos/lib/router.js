@@ -31,7 +31,21 @@ if (Meteor.isClient) {
 }
 
 Router.route('join');
-Router.route('signin');
+Router.route('signin',{
+  path: '/signin',
+
+  onBeforeAction: function () {
+
+    if (this.ready()) {
+      // Handle for launch screen defined in app-body.js
+      dataReadyHold.release();
+    }
+  },
+
+  action: function () {
+    this.render();
+  }
+});
 Router.route('detail');
 Router.route('cast');
 
