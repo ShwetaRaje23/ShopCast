@@ -1,6 +1,6 @@
 if (Meteor.isClient) {
 
-    Template.detail.events({
+    Template.cast.events({
         'submit': function (event, template) {
             // Prevent default browser form submit
             event.preventDefault();
@@ -12,7 +12,7 @@ if (Meteor.isClient) {
 
             // Insert a task into the collection
             // Add this to the database for caster
-
+            console.log("Here we are!!");
 
             Broadcast.insert({
                place: place,
