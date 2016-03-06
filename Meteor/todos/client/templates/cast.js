@@ -9,20 +9,22 @@ if (Meteor.isClient) {
             var time = template.$('[name=time]').val();
             var charge = template.$('[name=charge]').val();
             var isDropoff  = template.$('[name=dropoff]').val();
+            var casteremail = Meteor.user()['emails'][0]['address'];
+            var castername = casteremail.substring(0, casteremail.indexOf('@'));
 
             // Insert a task into the collection
             // Add this to the database for caster
-            console.log("Here we are!!");
-
             Broadcast.insert({
+               casteremail: casteremail,
+               castername: castername,
                place: place,
                items: items,
                time: time,
                charge: charge,
                isDropoff: isDropoff
             });
-
-            Router.go('listsShow', Lists.findOne());
+            console.log('Broadcast inserted');
+            Router.go('castsShow', Broadcast.findOne());
         }
     });
 }

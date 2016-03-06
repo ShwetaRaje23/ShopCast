@@ -28,7 +28,7 @@
       <div class="list-todos">
         <a class="js-new-cast link-list-new"><span class="icon-plus"></span>Broadcast</a>
 
-        {{#each lists}}
+     <!--    {{#each lists}}
           <a href="{{pathFor 'listsShow'}}" class="list-todo {{activeListClass}}" title="{{name}}">
             {{#if userId}}
               <span class="icon-lock"></span>
@@ -37,6 +37,11 @@
               <span class="count-list">{{incompleteCount}}</span>
             {{/if}}
             {{name}}
+          </a>
+        {{/each}} -->
+        {{#each broadcasts}}
+          <a href="{{pathFor 'castsShow'}}" class="list-todo {{activeListClass}}" title="{{place}}">
+            {{place}} - {{castername}}
           </a>
         {{/each}}
 

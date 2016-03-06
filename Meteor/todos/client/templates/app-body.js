@@ -76,9 +76,12 @@ Template.appBody.helpers({
   lists: function() {
     return Lists.find();
   },
+  broadcasts: function() {
+    return Broadcast.find();
+  },
   activeListClass: function() {
     var current = Router.current();
-    if (current.route.name === 'listsShow' && current.params._id === this._id) {
+    if (current.route.name === 'castsShow' && current.params._id === this._id) {
       return 'active';
     }
   },
@@ -116,8 +119,8 @@ Template.appBody.events({
 
     // if we are on a private list, we'll need to go to a public one
     var current = Router.current();
-    if (current.route.name === 'listsShow' && current.data().userId) {
-      Router.go('listsShow', Lists.findOne({userId: {$exists: false}}));
+    if (current.route.name === 'castsShow' && current.data().userId) {
+      Router.go('castsShow', Lists.findOne({userId: {$exists: false}}));
     }
     else {
       Router.go('signin');

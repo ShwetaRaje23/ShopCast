@@ -15,7 +15,7 @@ if (Meteor.isClient) {
         credit: credit
       });
 
-      Router.go('listsShow', Lists.findOne());
+      Router.go('castsShow', Broadcast.findOne());
     }
   });
 }

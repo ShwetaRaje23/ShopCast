@@ -13,7 +13,8 @@ Router.configure({
   waitOn: function() {
     return [
       Meteor.subscribe('publicLists'),
-      Meteor.subscribe('privateLists')
+      Meteor.subscribe('privateLists'),
+      Meteor.subscribe('casts')
     ];
   }
 });
@@ -49,6 +50,27 @@ Router.route('listsShow', {
   },
   data: function () {
     return Lists.findOne(this.params._id);
+  },
+  action: function () {
+    this.render();
+  }
+});
+
+
+Router.route('castsShow', {
+  path: '/casts/:_id',
+  // subscribe to todos before the page is rendered but don't wait on the
+  // subscription, we'll just render the items as they arrive
+  onBeforeAction: function () {
+    this.todosHandle = Meteor.subscribe('casts', this.params._id);
+
+    if (this.ready()) {
+      // Handle for launch screen defined in app-body.js
+      dataReadyHold.release();
+    }
+  },
+  data: function () {
+    return Broadcast.findOne(this.params._id);
   },
   action: function () {
     this.render();

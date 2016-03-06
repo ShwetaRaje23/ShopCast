@@ -40,7 +40,7 @@ Template.signin.events({
         return Session.set(ERRORS_KEY, {'none': error.reason});
       }
 
-      Router.go('listsShow', Lists.findOne());
+      Router.go('castsShow', Broadcast.findOne());
     });
   }
 });
