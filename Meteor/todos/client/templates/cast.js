@@ -14,13 +14,13 @@ if (Meteor.isClient) {
             // Add this to the database for caster
 
 
-            //Details.insert({
-            //    place: place,
-            //    items: items,
-            //    time: time,
-            //    charge: charge,
-            //    isDropoff: isDropoff
-            //});
+            Broadcast.insert({
+               place: place,
+               items: items,
+               time: time,
+               charge: charge,
+               isDropoff: isDropoff
+            });
 
             Router.go('listsShow', Lists.findOne());
         }

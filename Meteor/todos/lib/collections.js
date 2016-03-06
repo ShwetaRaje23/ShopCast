@@ -15,3 +15,5 @@ Lists.defaultName = function() {
 Todos = new Mongo.Collection('todos');
 
 Details = new Mongo.Collection("details");
+
+Broadcast = new Mongo.Collection("broadcast");
