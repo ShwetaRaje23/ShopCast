@@ -8,8 +8,8 @@
 
     <div class="content-scrollable">
       <div class="wrapper-auth">
-        <h1 class="title-auth">Shop Cast</h1>
-        <p class="subtitle-auth" >Sign in to connect to Shop Casters</p>
+        <h1 class="title-auth">ShopCast</h1>
+        <p class="subtitle-auth" >Sign in to connect with other ShopCasters.</p>
 
         <form>
           {{#if errorMessages}}
@@ -32,6 +32,16 @@
 
           <button type="submit" class="btn-primary">Sign in</button>
         </form>
+        <br/>
+        <div>
+          {{#if currentUser}}
+              {{currentUser.services.facebook.name}} -
+              {{currentUser.services.facebook.gender}}
+              <button id="logout" class="btn btn-default">Logout</button>
+          {{else}}
+              <button id="facebook-login" class="btn btn-default"> Login with Facebook</button>
+          {{/if}}
+        </div>
       </div>
 
       <a href="{{pathFor 'join'}}" class="link-auth-alt">Need an account? Join Now.</a>
