@@ -1,0 +1,1 @@
+{"head":"","body":"","js":"\nTemplate.__checkName(\"appLoading\");\nTemplate[\"appLoading\"] = new Template(\"Template.appLoading\", (function() {\n  var view = this;\n  return HTML.Raw('<img src=\"/img/logo-todos.svg\" class=\"loading-app\">');\n}));\n","bodyAttrs":{}}
