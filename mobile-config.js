@@ -1,10 +1,10 @@
 App.info({
-  name: 'Todos',
-  description: 'A simple todo list app built in Meteor.',
-  author: 'Percolate Studio Team',
-  email: 'us@percolatestudio.com',
-  website: 'http://percolatestudio.com',
-  version: '0.0.1'
+  name: 'Shopcast',
+  description: 'Shop with your friends.',
+  author: 'Mobile Hackers',
+  email: 'itsshwet@gmail.com',
+  website: 'www.shopcast.meteor.com',
+  version: '0.5.0'
 });
 
 App.icons({
@@ -47,4 +47,3 @@ App.launchScreens({
 
 App.setPreference('StatusBarOverlaysWebView', 'false');
 App.setPreference('StatusBarBackgroundColor', '#000000');
-
