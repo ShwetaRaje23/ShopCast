@@ -1,3 +1,5 @@
+App.accessRule("*");
+
 App.info({
   name: 'Shopcast',
   description: 'Shop with your friends.',
