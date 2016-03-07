@@ -42,15 +42,13 @@ Template.signin.events({
 
       Router.go('castsShow', Broadcast.findOne());
     });
-  }
-});
-
-Template.signin.events ({
+  },
   'click #facebook-login': function (event) {
     Meteor.loginWithFacebook ({}, function (err) {
       if (err) {
         throw new Meteor.Error("Facebook login failed.");
       }
+      Router.go('castsShow', Broadcast.findOne());
     });
   },
   'click #logout': function (event) {
@@ -58,6 +56,7 @@ Template.signin.events ({
       if (err) {
         throw new Meteor.Error("Logout failed.");
       }
+      Router.go('signin');
     });
   }
 });
