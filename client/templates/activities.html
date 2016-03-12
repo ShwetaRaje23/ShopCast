@@ -1,22 +1,32 @@
 <template name="activity">
+    <div style="margin-top: 20%">
+
   <a href="{{pathFor 'castsShow'}}" class="item-activity">
 
-    <span class="attribution">
-      <span class="avatar">
-        <!-- <img src="{{userAvatar}}" class="image-avatar"> -->
-      </span>
+    <span class="lists-show">
+      <!--<span class="avatar">-->
+         <!--<img src="{{userAvatar}}" class="image-avatar">-->
+      <!--</span>-->
       <span class="meta">
-        <span class="author">{{firstName}}</span> broadcasted <span class="recipe">{{place}}</span>: {{text}}
-       {{#if place}}<span class="location">&mdash;{{items}}</span>{{/if}}
+        <span class="author icon-user-add">{{firstName}}</span> is going to
+            <span class="recipe ">{{place}} and can get {{items}} item(s)</span>
+            <br>
+              <span>Dropoff : {{isDropoff}}</span>
+              <br>
+            <span>  Charge : {{charge}}</span>
+           <!--<span class="location">&mdash;</span>-->
        </span>
-     </span>
 
-    <div class="bg-image" style="background-image: url('{{image}}');">
-      <span>
-        Dropoff : {{isDropoff}}</span><br>
-      <span>  Charge : {{charge}}</span>
 
-    </div>
+    <!--<div class="bg-image" style="background-image: url('{{image}}');">-->
+      <!--<span>-->
+        <!--Dropoff : {{isDropoff}}</span><br>-->
+      <!--<span>  Charge : {{charge}}</span>-->
+
+    <!--</div>-->
+        <!--</span>-->
+        </span>
 
   </a>
+    </div>
 </template>
