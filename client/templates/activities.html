@@ -1,0 +1,22 @@
+<template name="activity">
+  <a href="{{pathFor 'castsShow'}}" class="item-activity">
+
+    <span class="attribution">
+      <span class="avatar">
+        <!-- <img src="{{userAvatar}}" class="image-avatar"> -->
+      </span>
+      <span class="meta">
+        <span class="author">{{firstName}}</span> broadcasted <span class="recipe">{{place}}</span>: {{text}}
+       {{#if place}}<span class="location">&mdash;{{items}}</span>{{/if}}
+       </span>
+     </span>
+
+    <div class="bg-image" style="background-image: url('{{image}}');">
+      <span>
+        Dropoff : {{isDropoff}}</span><br>
+      <span>  Charge : {{charge}}</span>
+
+    </div>
+
+  </a>
+</template>
