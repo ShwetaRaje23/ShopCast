@@ -17,6 +17,9 @@ Meteor.publish('todos', function(listId) {
 });
 
 Meteor.publish('casts', function(castId){
-	console.log(Broadcast.find(castId));
 	return Broadcast.find({castId: castId});
+});
+
+Meteor.publish('details', function(){
+	return Details.find();
 });

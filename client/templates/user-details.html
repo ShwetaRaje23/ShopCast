@@ -8,8 +8,8 @@
 
     <div class="content-scrollable">
       <div class="wrapper-auth">
+        {{#if userEnter}}
         <h1 class="title-auth">Account Details</h1>
-
         <form>
           <!-- {{#if errorMessages}}
             <div class="list-errors">
@@ -18,28 +18,75 @@
               {{/each}}
             </div>
           {{/if}} -->
-
+          {{#with userDetail}}
           <div class="input-symbol" style="border-bottom: 20px">
-            <input type="text" name="username" placeholder="Username"  />
+            <input type="text" name="username" placeholder="Username : {{username}}" />
             <span class="icon-user-add" title="Your Email"></span>
           </div>
 
           <div class="input-symbol ">
-            <input type="text" name="location" placeholder="Location" />
+            <input type="text" name="location" placeholder="Location : {{location}}" />
             <!-- <span class="icon-lock" title="Password"></span> -->
           </div>
 
           <div class="input-symbol ">
-            <input type="text" name="phnumber" placeholder="Phone Number" />
+            <input type="text" name="phnumber" placeholder="Phone : {{phone}}" />
             <!-- <span class="icon-lock" title="Confirm Password"></span> -->
           </div>
-           
+
 
             <h1 style="margin-top: 10%"  class="title-auth">Payment Details</h1>
 
 
             <div class="input-symbol ">
-                <input type="text" name="credit" placeholder="Card Number" />
+                <input type="text" name="credit" placeholder="Credit : {{credit}}" />
+                <!-- <span class="icon-lock" title="Password"></span> -->
+            </div>
+
+            <div class="input-symbol ">
+                <input type="text" name="cvv" placeholder="CVV : {{cvv}}" />
+                <!-- <span class="icon-lock" title="Confirm Password"></span> -->
+            </div>
+
+            <div class="input-symbol ">
+                <input type="text" name="expiration" placeholder="Expiration : {{expiration}}" />
+                <!-- <span class="icon-lock" title="Confirm Password"></span> -->
+            </div>
+
+          <button style="margin-top: 10%" type="submit" class="btn-primary">Update</button>
+          {{/with}}
+        </form>
+        {{else}}
+        <h1 class="title-auth">Account Details</h1>
+        <form>
+          <!-- {{#if errorMessages}}
+            <div class="list-errors">
+              {{#each errorMessages}}
+                <div class="list-item">{{this}}</div>
+              {{/each}}
+            </div>
+          {{/if}} -->
+          <div class="input-symbol" style="border-bottom: 20px">
+            <input type="text" name="username" placeholder="Username" />
+            <span class="icon-user-add" title="Your Email"></span>
+          </div>
+
+          <div class="input-symbol ">
+            <input type="text" name="location" placeholder="Location " />
+            <!-- <span class="icon-lock" title="Password"></span> -->
+          </div>
+
+          <div class="input-symbol ">
+            <input type="text" name="phnumber" placeholder="Phone" />
+            <!-- <span class="icon-lock" title="Confirm Password"></span> -->
+          </div>
+
+
+            <h1 style="margin-top: 10%"  class="title-auth">Payment Details</h1>
+
+
+            <div class="input-symbol ">
+                <input type="text" name="credit" placeholder="Credit" />
                 <!-- <span class="icon-lock" title="Password"></span> -->
             </div>
 
@@ -49,12 +96,13 @@
             </div>
 
             <div class="input-symbol ">
-                <input type="date" name="expiration" placeholder="Expiration" />
+                <input type="text" name="expiration" placeholder="Expiration" />
                 <!-- <span class="icon-lock" title="Confirm Password"></span> -->
             </div>
 
-          <button style="margin-top: 10%" type="submit" class="btn-primary">Update</button>
+          <button style="margin-top: 10%" type="submit" class="btn-primary">Submit</button>
         </form>
+        {{/if}}
       </div>
     </div>
   </div>
