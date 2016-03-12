@@ -10,16 +10,22 @@ Meteor.publish('privateLists', function() {
   }
 });
 
-Meteor.publish('todos', function(listId) {
-  check(listId, String);
+Meteor.publish('todos', function(castId) {
+  check(castId, String);
 
-  return Todos.find({listId: listId});
+  return Todos.find({castId: castId});
 });
 
 Meteor.publish('casts', function(castId){
 	return Broadcast.find({castId: castId});
 });
 
+
 Meteor.publish('details', function(){
 	return Details.find();
+});
+
+Meteor.publish('request', function(requestId){
+  console.log(Request.find(requestId));
+  return Request.find({requestId: requestId});
 });

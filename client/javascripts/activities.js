@@ -28,6 +28,6 @@ Template.activity.helpers({
     return this.dropoff;
   },
   charge: function() {
-    return this.dropoff;
+    return this.charge;
   }
 })
