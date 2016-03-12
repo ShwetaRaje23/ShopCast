@@ -40,7 +40,7 @@ Template.signin.events({
         return Session.set(ERRORS_KEY, {'none': error.reason});
       }
 
-      Router.go('castsShow', Broadcast.findOne());
+      Router.go('feed');
     });
   },
   'click #facebook-login': function (event) {
@@ -48,7 +48,7 @@ Template.signin.events({
       if (err) {
         throw new Meteor.Error("Facebook login failed.");
       }
-      Router.go('castsShow', Broadcast.findOne());
+      Router.go('feed');
     });
   },
   'click #logout': function (event) {

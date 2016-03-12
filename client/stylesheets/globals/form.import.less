@@ -2,6 +2,10 @@
 input[type="text"],
 input[type="email"],
 input[type="password"],
+input[type="number"],
+input[type="time"],
+input[type="date"],
+input[type="datetime"],
 textarea {
   // Sizing
   .font-s2;
@@ -20,6 +24,13 @@ textarea {
   &[disabled] { opacity: .5; }
 }
 
+// make changes to this to add the same value for spin buttons
+input[type="number"].mod::-webkit-outer-spin-button,
+input[type="number"].mod::-webkit-inner-spin-button {
+
+  height: 100%;
+
+}
 // Remove chrome/saf autofill yellow background
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px @color-empty inset;
