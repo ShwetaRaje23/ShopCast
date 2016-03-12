@@ -11,7 +11,6 @@ if (Meteor.isClient) {
             var isDropoff  = template.$('[name=dropoff]').val();
             var casteremail = Meteor.user()['emails'][0]['address'];
             var castername = casteremail.substring(0, casteremail.indexOf('@'));
-
             // Insert a task into the collection
             // Add this to the database for caster
             Broadcast.insert({

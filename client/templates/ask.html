@@ -1,0 +1,66 @@
+<template name="ask">
+  <div class="page lists-show">
+    {{#if currentUser}}
+    <nav class="js-title-nav">
+      {{#if editing}}
+      <form class="js-edit-form list-edit-form">
+        <input type="text" name="name" value="{{name}}">
+        <div class="nav-group right">
+          <a href="#" class="js-cancel nav-item"><span class="icon-close js-cancel" title="Cancel"></span></a>
+        </div>
+      </form>
+      {{else}}
+      <div class="nav-group">
+        <a href="#" class="js-menu nav-item"><span class="icon-list-unordered" title="Show menu"></span></a>
+      </div>
+      <!-- <h1>Hello world</h1> -->
+      <h1 class="js-edit-list title-page">
+        <span class="title-wrapper">{{castername}}</span>
+        <span class="count-list">is going to</span>
+        <span class="title-wrapper">{{place}}</span></h1>
+
+        {{/if}}
+
+        <form class="js-todo-new todo-new input-symbol">
+          <!-- <span class="icon-add js-todo-add"></span> -->
+          <!-- <input type="text" placeholder="Type to add new tasks"> -->
+          <input type="text" id="itemname" placeholder="Add an item" style="float: left; width: 200px;">
+          <input type="number" placeholder="How many?" id="itemquantity" min="1" max="20" style="float: left; width: 200px;">
+          <input type="text" placeholder="Approx cost" id="itemprice" style="float: left; width: 200px;">
+          <!-- <span class="icon-add js-todo-add"></span> -->
+          <input type="submit" value="Submit" style="visibility: hidden;">
+        </form>
+      </nav>
+
+
+
+      <div class="content-scrollable list-items">
+       {{#if todosReady}}
+       {{#with _id}} {{! Establish new data context with only the '_id'
+       field. This way, when the 'incompleteCount' field
+       changes, we don't re-render the list contents }}
+       <div>
+       <div style="float: left; width: 200px;">Itemname</div>
+        <div style="float: left; width: 200px;">Itemquantity</div>
+        <div style="float: left; width: 200px;">Itemprice</div>
+        <!-- <br style="clear: left;" /> -->
+      </div>
+      {{#each todos this}}
+      {{> todosItem}}
+      {{else}}
+      <div class="wrapper-message">
+        <div class="title-message">No tasks here</div>
+        <div class="subtitle-msesage">Add new tasks using the field above</div>
+      </div>
+      {{/each}}
+      {{/with}}
+      <button type="submit" class="btn-primary send-request">Send Request</button>
+      {{else}}
+      <div class="wrapper-message">
+        <div class="title-message">Loading tasks...</div>
+      </div>
+      {{/if}}
+    </div>
+    {{/if}}
+  </div>
+</template>
