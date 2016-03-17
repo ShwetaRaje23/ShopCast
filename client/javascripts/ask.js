@@ -15,8 +15,6 @@ Template.ask.onRendered(function() {
     listRenderHold.release();
 
     firstRender = false;
-    console.log(firstRender);
-    alert('Page rendered!');
     var requesteremail = Meteor.user()['emails'][0]['address'];
     var requestername = requesteremail.substring(0, requesteremail.indexOf('@'));
 
@@ -207,7 +205,6 @@ Template.ask.events({
       itemprice: itemprice,
       createdAt: new Date()
     });
-    alert('Todo inserted');
     $('#itemname').val('');
     $('#itemquantity').val('');
     $('#itemprice').val('');

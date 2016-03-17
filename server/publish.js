@@ -26,6 +26,5 @@ Meteor.publish('details', function(){
 });
 
 Meteor.publish('request', function(requestId){
-  console.log(Request.find(requestId));
   return Request.find({requestId: requestId});
 });
