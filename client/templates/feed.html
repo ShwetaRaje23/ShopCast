@@ -11,17 +11,21 @@
               <span class="title-wrapper" >Broadcasts</span></h1>
           </nav>
 
-    <div class="content-scrollable list-items">
-        <div class="list-item">
+    <div>
+    <div class="list-item">
       <div class="list-activities {{#unless ready}}loading{{/unless}}">
         <!--{{#if place}}-->
           {{#each broadcasts}}
+<!--
               {{#if place}}
                   {{#if items}}
+-->
                     {{> activity}}
 
+<!--
                     {{/if}}
               {{/if}}
+-->
           {{else}}
             <div class="wrapper-message">
               <div class="title-message"> No broadcasts in your area </div>
