@@ -1,0 +1,37 @@
+<template name="casterFeed">
+  <div class="page whats-cooking">
+
+    <!-- {{>nav title="What's Cooking"}} -->
+      <nav class="js-title-nav">
+          <div class="nav-group">
+              <a href="#" class="js-menu nav-item"></a>
+              </div>
+
+          <h1 class="js-edit-list title-page">
+              <span class="title-wrapper" >Your Broadcasts</span></h1>
+          </nav>
+
+    <div>
+    <div class="list-item">
+      <div class="list-activities {{#unless ready}}loading{{/unless}}">
+        <!--{{#if place}}-->
+          {{#each broadcasts}}
+              {{> activity}}
+          {{else}}
+            <div class="wrapper-message">
+              <div class="title-message"> You haven't sent any broadcasts yet.</div>
+              <div class="subtitle-message">Start your first broadcast!</div>
+            </div>
+
+          {{/each}}
+        <!-- {{else}}
+          <div class="wrapper-message">
+            <div class="icon-sync"></div>
+            <div class="title-message">Loading</div>
+          </div>-->
+        <!--{{/if}} -->
+      </div>
+        </div>
+    </div>
+  </div>
+</template>

@@ -146,5 +146,12 @@ Template.appBody.events({
     // list._id = Lists.insert(list);
 
     Router.go('cast');
+  },
+
+  'click .js-your-cast': function() {
+    // var list = {name: Lists.defaultName(), incompleteCount: 0};
+    // list._id = Lists.insert(list);
+
+    Router.go('casterFeed');
   }
 });

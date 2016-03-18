@@ -9,12 +9,13 @@ if (Meteor.isClient) {
             var time = template.$('[name=time]').val();
             var charge = template.$('[name=charge]').val();
             var isDropoff  = template.$('[name=dropoff]').val();
+            var userId = Meteor.user()['_id'];
             var casteremail = Meteor.user()['emails'][0]['address'];
             var castername = casteremail.substring(0, casteremail.indexOf('@'));
             // Insert a task into the collection
             // Add this to the database for caster
             Broadcast.insert({
-               casteremail: casteremail,
+               userId: userId,
                castername: castername,
                place: place,
                items: items,
