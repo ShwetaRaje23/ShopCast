@@ -28,3 +28,7 @@ Meteor.publish('details', function(){
 Meteor.publish('request', function(requestId){
   return Request.find({requestId: requestId});
 });
+
+Meteor.publish('requests', function(requestId){
+  return Request.find({castId: requestId});
+});

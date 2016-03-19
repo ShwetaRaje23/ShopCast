@@ -15,6 +15,11 @@ Template.activity.onRendered(function() {
 
 
 Template.activity.helpers({
+
+  test : function() {
+    console.log(Router.current().params);
+  },
+
   firstName: function() {
     return this.castername;
   },

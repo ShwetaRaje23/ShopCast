@@ -1,4 +1,4 @@
-<template name="casterFeed">
+<template name="approval">
   <div class="page whats-cooking">
 
     <!-- {{>nav title="What's Cooking"}} -->
@@ -8,19 +8,19 @@
               </div>
 
           <h1 class="js-edit-list title-page">
-              <span class="title-wrapper" >Your Broadcasts</span></h1>
+              <span class="title-wrapper" >Details of Trip</span></h1>
           </nav>
 
     <div>
     <div class="list-item">
       <div class="list-activities {{#unless ready}}loading{{/unless}}">
         <!--{{#if place}}-->
-          {{#each broadcasts}}
-              {{> activitycast}}
+          {{#each todos}}
+            {{> request}}
           {{else}}
             <div class="wrapper-message">
-              <div class="title-message"> You haven't sent any broadcasts yet.</div>
-              <div class="subtitle-message">Start your first broadcast!</div>
+              <div class="title-message"> No one has requested yet. </div>
+              <div class="subtitle-message">Add a better location or change your limits!</div>
             </div>
 
           {{/each}}
