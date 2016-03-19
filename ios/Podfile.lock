@@ -1,0 +1,29 @@
+PODS:
+  - InflectorKit (0.0.1)
+  - Meteor (0.1.4):
+    - InflectorKit
+    - PocketSocket
+    - SimpleKeychain
+  - OCMock (3.1.2)
+  - PocketSocket (0.6.4)
+  - SimpleKeychain (0.5.0)
+
+DEPENDENCIES:
+  - InflectorKit
+  - Meteor (from `.`)
+  - OCMock
+  - PocketSocket
+  - SimpleKeychain
+
+EXTERNAL SOURCES:
+  Meteor:
+    :path: .
+
+SPEC CHECKSUMS:
+  InflectorKit: 64497199e6764f4d8337cab7f700a77b13d76a73
+  Meteor: dda6a8236ce68a1223d5f36ba8bb94899af95f14
+  OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
+  PocketSocket: eee7ef375f55b98e7ca79e097d9c61fd688e9494
+  SimpleKeychain: ae04c7ca6a960a146081010b412cf0ba2ecb10fe
+
+COCOAPODS: 0.39.0
