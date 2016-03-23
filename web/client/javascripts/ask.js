@@ -21,11 +21,12 @@ Template.ask.onRendered(function() {
 
     Request.insert({
       castId: '',
+      userId: Meteor.userId(),
       username: requestername,
       createdAt: new Date(),
       approved: false
     });
-    Session.set('currentrequestid', Request.findOne({username: requestername})._id);
+    Session.set('currentrequestid', Request.findOne({username: requestername})._id); //Fix bug
   }
 
   this.find('.js-title-nav')._uihooks = {
@@ -54,8 +55,12 @@ Template.ask.helpers({
   },
 
   todos: function(castId) {
-    console.log(castId);
-    return Todos.find({castId: castId});
+    return Todos.find({$and: [{userId: Meteor.userId()},{castId: castId}]});
+  },
+
+  approved: function(castId) {
+    var comp =  Request.findOne({$and: [{userId: Meteor.userId()},{castId: castId["_id"]}]});
+    return comp.approved;
   }
 });
 
@@ -199,6 +204,7 @@ Template.ask.events({
     Todos.insert({
       castId: this._id,
       requestId: Session.get('currentrequestid'),
+      userId: Meteor.userId(),
       username: requestername,
       itemname: itemname,
       itemquantity: itemquantity,
