@@ -84,7 +84,7 @@ if (Meteor.isClient) {
       }
 
     }
-      Router.go('castsShow', Broadcast.findOne());
+      Router.go('feed');
     }
   });
 }
