@@ -14,3 +14,9 @@ Template.request.events({
   },
 
 });
+
+Template.request.helpers({
+  approved: function() {
+    return this.approved;
+  }
+});

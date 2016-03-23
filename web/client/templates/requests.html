@@ -11,8 +11,13 @@
         <span class="author icon-user-add">{{username}}</span> wants
         <span class="recipe ">{{createdAt}} and needs {{approved}} item(s)</span>
         <br>
+        {{#if approved}}
+        <a class="js-approve btn-primary">Upload Bill</a>
+        <a class="js-reject btn-primary">Done</a>
+        {{else}}
         <a class="js-approve btn-primary">Approve</a>
         <a class="js-reject btn-primary">Reject</a>
+        {{/if}}
        </span>
       </span>
   </div>
