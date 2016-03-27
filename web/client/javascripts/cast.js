@@ -23,8 +23,7 @@ if (Meteor.isClient) {
                charge: charge,
                isDropoff: isDropoff
             });
-            console.log('Broadcast inserted');
-            Router.go('castsShow', Broadcast.findOne());
+            Router.go('feed');
         }
     });
 }

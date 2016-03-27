@@ -27,25 +27,9 @@
 
       {{#if currentUser}}
       <div class="list-todos">
+        <a class="js-your-feed link-list-new">Feed</a>
         <a class="js-new-cast link-list-new"><span class="icon-plus"></span>Broadcast</a>
         <a class="js-your-cast link-list-new">Your Broadcast</a>
-
-     <!--    {{#each lists}}
-          <a href="{{pathFor 'listsShow'}}" class="list-todo {{activeListClass}}" title="{{name}}">
-            {{#if userId}}
-              <span class="icon-lock"></span>
-            {{/if}}
-            {{#if incompleteCount}}
-              <span class="count-list">{{incompleteCount}}</span>
-            {{/if}}
-            {{name}}
-          </a>
-        {{/each}} -->
-        <!-- {{#each broadcasts}}
-          <a href="{{pathFor 'castsShow'}}" class="list-todo {{activeListClass}}" title="{{place}}">
-            {{place}} - {{castername}}
-          </a>
-        {{/each}} -->
 
       </div>
       {{/if}}
