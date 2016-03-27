@@ -1,22 +1,20 @@
 <template name="activity">
-    <div style="margin-top: 20%">
-  <a href="{{pathFor 'ask'}}" class="item-activity">
-
-    <span class="lists-show">
-      <!--<span class="avatar">-->
-         <!--<img src="{{userAvatar}}" class="image-avatar">-->
-      <!--</span>-->
-      <span class="meta">
-        <span class="author icon-user-add">{{firstName}}</span> is going to
-            <span class="recipe ">{{place}} and can get {{items}} item(s)</span>
-            <br>
-              <span>Dropoff : {{isDropoff}}</span>
-              <br>
-            <span>  Charge : {{charge}}</span>
-           <!--<span class="location">&mdash;</span>-->
-       </span>
-      </span>
-
-  </a>
-    </div>
+    <div class="row">
+        <div class="col s12">
+          <div class="card">
+            <!-- <div class="card-image">
+              <img src="images/sample-1.jpg">
+              <span class="card-title">Card Title</span>
+            </div> -->
+            <div class="card-content">
+              <p>{{firstName}} is going to {{place}} and can get {{items}} item(s).</p>
+              <p>Charge : {{charge}}</p>
+              <p>Dropoff : {{isDropoff}}</p>
+            </div>
+            <div class="card-action">
+              <a href="{{pathFor 'ask'}}">Add a Request</a>
+            </div>
+          </div>
+        </div>
+      </div>
 </template>
