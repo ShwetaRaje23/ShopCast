@@ -45,6 +45,7 @@
         <div style="float: left; width: 200px;">Itemquantity</div>
         <div style="float: left; width: 200px;">Itemprice</div>
       </div> -->
+      {{#each todos this}}
       <table class="striped centered responsive-table">
         <thead>
           <tr>
@@ -55,25 +56,11 @@
         </thead>
 
         <tbody>
-          <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>$0.87</td>
-          </tr>
-          <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-          </tr>
+          {{> todosItem}}
         </tbody>
       </table>
-      {{#each todos this}}
-      {{> todosItem}}
+
+
       {{else}}
       <div class="wrapper-message">
         <div class="title-message">No tasks here</div>
