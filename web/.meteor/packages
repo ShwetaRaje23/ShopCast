@@ -20,3 +20,4 @@ check
 accounts-facebook
 service-configuration
 simple:rest
+materialize:materialize

@@ -40,12 +40,38 @@
        {{#with _id}} {{! Establish new data context with only the '_id'
        field. This way, when the 'incompleteCount' field
        changes, we don't re-render the list contents }}
-       <div>
+       <!-- <div>
        <div style="float: left; width: 200px;">Itemname</div>
         <div style="float: left; width: 200px;">Itemquantity</div>
         <div style="float: left; width: 200px;">Itemprice</div>
-        <!-- <br style="clear: left;" /> -->
-      </div>
+      </div> -->
+      <table class="striped centered responsive-table">
+        <thead>
+          <tr>
+              <th data-field="id">Name</th>
+              <th data-field="name">Item Name</th>
+              <th data-field="price">Item Price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Alvin</td>
+            <td>Eclair</td>
+            <td>$0.87</td>
+          </tr>
+          <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+          </tr>
+        </tbody>
+      </table>
       {{#each todos this}}
       {{> todosItem}}
       {{else}}
