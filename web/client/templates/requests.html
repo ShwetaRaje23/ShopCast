@@ -1,25 +1,24 @@
 <template name="request">
-    <div style="margin-top: 20%">
-
-  <div class="item-activity">
-
-    <span class="lists-show">
-      <!--<span class="avatar">-->
-         <!--<img src="{{userAvatar}}" class="image-avatar">-->
-      <!--</span>-->
-      <span class="meta">
-        <span class="author icon-user-add">{{username}}</span> wants
-        <span class="recipe ">{{createdAt}} and needs {{approved}} item(s)</span>
-        <br>
-        {{#if approved}}
-        <a class="js-approve btn-primary">Upload Bill</a>
-        <a class="js-reject btn-primary">Done</a>
-        {{else}}
-        <a class="js-approve btn-primary">Approve</a>
-        <a class="js-reject btn-primary">Reject</a>
-        {{/if}}
-       </span>
-      </span>
-  </div>
-    </div>
+    <div class="row">
+        <div class="col s12">
+          <div class="card">
+            <!-- <div class="card-image">
+              <img src="images/sample-1.jpg">
+              <span class="card-title">Card Title</span>
+            </div> -->
+            <div class="card-content">
+              <p>{{username}} wants {{createdAt}} and needs {{approved}} item(s).</p>
+            </div>
+            <div class="card-action">
+              {{#if approved}}
+              <a class="js-approve">Upload Bill</a>
+              <a class="js-reject">Done</a>
+              {{else}}
+              <a class="js-approve">Approve</a>
+              <a class="js-reject">Reject</a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
 </template>
