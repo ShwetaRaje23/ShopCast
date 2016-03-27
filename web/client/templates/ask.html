@@ -1,79 +1,74 @@
 <template name="ask">
-  <div class="page lists-show">
+  <div class="page whats-cooking">
     {{#if currentUser}}
     <nav class="js-title-nav">
-      {{#if editing}}
-      <form class="js-edit-form list-edit-form">
-        <input type="text" name="name" value="{{name}}">
-        <div class="nav-group right">
-          <a href="#" class="js-cancel nav-item"><span class="icon-close js-cancel" title="Cancel"></span></a>
-        </div>
-      </form>
-      {{else}}
       <div class="nav-group">
         <a href="#" class="js-menu nav-item"><span class="icon-list-unordered" title="Show menu"></span></a>
       </div>
-      <!-- <h1>Hello world</h1> -->
-      <h1 class="js-edit-list title-page">
-        <span class="title-wrapper">{{castername}}</span>
-        <span class="count-list">is going to</span>
-        <span class="title-wrapper">{{place}}</span></h1>
-
-        {{/if}}
-        {{#if approved this}}
-          <h3 style="float: left; margin-top: 50px;">You already sent your request.</h3>
-        {{else}}
-        <form class="js-todo-new todo-new input-symbol">
-          <!-- <span class="icon-add js-todo-add"></span> -->
-          <!-- <input type="text" placeholder="Type to add new tasks"> -->
-          <input type="text" id="itemname" placeholder="Add an item" style="float: left; width: 200px;">
-          <input type="number" placeholder="How many?" id="itemquantity" min="1" max="20" style="float: left; width: 200px; height: 25px;">
-          <input type="text" placeholder="Approx cost" id="itemprice" style="float: left; width: 200px;">
-          <!-- <span class="icon-add js-todo-add"></span> -->
-          <input type="submit" value="Submit" style="visibility: hidden;">
-        </form>
-        {{/if}}
+      <h1 class="js-edit-list title-page"><span class="title-wrapper">{{castername}} is going to {{place}}</span></h1>
       </nav>
 
       <div class="content-scrollable list-items">
+        <div style="margin-top:80px;">
+        {{#if approved this}}
+          <h3>You already sent your request.</h3>
+        {{else}}
+        <h2>Add Items</h2>
+        <div class="row">
+
+            <form class="col s12 js-todo-new">
+              <div class="row">
+                <div class="input-field col s4">
+                  <input placeholder="Add item" id="itemname" type="text">
+                  <label class="active" for="itemname">Item</label>
+                </div>
+                <div class="input-field col s4">
+                  <input placeholder="Add quantity" id="itemquantity" type="text">
+                  <label class="active" for="itemquantity">Quantity</label>
+                </div>
+                <div class="input-field col s4">
+                  <input placeholder="Add price" id="itemprice" type="text">
+                  <label class="active" for="itemprice">Price</label>
+                </div>
+                <div>
+                  <input type="submit" style="visibility: hidden;">
+                </div>
+              </div>
+            </form>
+          </div>
+
+        {{/if}}
+       </div>
        {{#if todosReady}}
        {{#with _id}} {{! Establish new data context with only the '_id'
        field. This way, when the 'incompleteCount' field
        changes, we don't re-render the list contents }}
-       <!-- <div>
-       <div style="float: left; width: 200px;">Itemname</div>
-        <div style="float: left; width: 200px;">Itemquantity</div>
-        <div style="float: left; width: 200px;">Itemprice</div>
-      </div> -->
-      {{#each todos this}}
+
       <table class="striped centered responsive-table">
         <thead>
           <tr>
-              <th data-field="id">Name</th>
-              <th data-field="name">Item Name</th>
-              <th data-field="price">Item Price</th>
+              <th data-field="id">Item</th>
+              <th data-field="name">Quantity</th>
+              <th data-field="price">Price</th>
           </tr>
         </thead>
 
         <tbody>
+          {{#each todos this}}
           {{> todosItem}}
+          {{/each}}
         </tbody>
       </table>
-
-
-      {{else}}
-      <div class="wrapper-message">
-        <div class="title-message">No tasks here</div>
-        <div class="subtitle-msesage">Add new tasks using the field above</div>
-      </div>
-      {{/each}}
       {{/with}}
+
+      <div style="margin-top:20px; text-align:center;">
       {{#if approved this}}
-      <button type="submit" class="btn-default">Approved. On your way.</button>
-      <button type="submit" class="btn-primary">Confirm Receipt</button>
+      <button type="submit" class="btn disabled">Approved<i class="material-icons right">done</i></button>
+      <button type="submit" class="btn waves-effect waves-light">Confirm Receipt<i class="material-icons right">done_all</i></button>
       {{else}}
-      <button type="submit" class="btn-primary send-request">Send Request</button>
+      <button type="submit" class="btn waves-effect waves-light btn-large send-request">Send Request<i class="material-icons right">send</i></button>
       {{/if}}
+    </div>
       {{else}}
       <div class="wrapper-message">
         <div class="title-message">Loading tasks...</div>
