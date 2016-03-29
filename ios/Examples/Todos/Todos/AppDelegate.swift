@@ -22,7 +22,7 @@ import UIKit
 import CoreData
 import Meteor
 
-let Meteor = METCoreDataDDPClient(serverURL: NSURL(string: "wss://meteor-test-nb.meteor.com/websocket")!)
+let Meteor = METCoreDataDDPClient(serverURL: NSURL(string: "wss://shopcastdemo.herokuapp.com/websocket")!)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
