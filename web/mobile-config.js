@@ -1,4 +1,7 @@
 App.accessRule("*");
+App.accessRule('*.google.com/*');
+App.accessRule('*.googleapis.com/*');
+App.accessRule('*.gstatic.com/*');
 
 App.info({
   name: 'Shopcast',
