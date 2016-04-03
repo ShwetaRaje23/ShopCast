@@ -1,0 +1,1 @@
+{"version":3,"sources":["meteor://💻app/client/javascripts/feed.js"],"names":[],"mappings":"yBAAA;AACA;AACA;AACA;AACA","file":"/client/javascripts/feed.js","sourcesContent":["Template.feed.helpers({\n  broadcasts: function() {\n    return Broadcast.find();\n  }\n})\n"]}
