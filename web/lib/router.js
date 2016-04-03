@@ -57,6 +57,8 @@ Router.route('feed');
 
 Router.route('casterFeed');
 
+Router.route('dropoffMap');
+
 Router.route('listsShow', {
   path: '/lists/:_id',
   // subscribe to todos before the page is rendered but don't wait on the
@@ -130,6 +132,11 @@ Router.route('home', {
   path: '/',
   action: function() {
     // Router.go('listsShow', Lists.findOne());
-    Router.go('signin');
+    if (!(Meteor.user() || Meteor.loggingIn())) {
+      Router.go('signin');
+    }
+    else {
+      Router.go('feed');
+    }
   }
 });
