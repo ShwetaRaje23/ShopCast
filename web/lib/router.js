@@ -130,6 +130,11 @@ Router.route('home', {
   path: '/',
   action: function() {
     // Router.go('listsShow', Lists.findOne());
-    Router.go('signin');
+    if (!(Meteor.user() || Meteor.loggingIn())) {
+      Router.go('signin');
+    }
+    else {
+      Router.go('feed');
+    }
   }
 });
