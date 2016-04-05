@@ -1,22 +1,7 @@
 var EDITING_KEY = 'editingList';
 Session.setDefault(EDITING_KEY, false);
 
-// Track if this is the first time the list template is rendered
-var firstRender = true;
-var listRenderHold = LaunchScreen.hold();
-listFadeInHold = null;
-
 Template.ask.onRendered(function() {
-  if (firstRender) {
-    // Released in app-body.js
-    listFadeInHold = LaunchScreen.hold();
-
-    // Handle for launch screen defined in app-body.js
-    listRenderHold.release();
-
-    firstRender = false;
-  }
-
 
   var requesteremail = Meteor.user()['emails'][0]['address'];
   var requestername = requesteremail.substring(0, requesteremail.indexOf('@'));
@@ -34,31 +19,6 @@ Template.ask.onRendered(function() {
   });
 
   Session.set('currentrequestid', Request.findOne({username: requestername})._id); //Fix bug
-
-//  $('.modal-trigger').leanModal({
-//    dismissible: true, // Modal can be dismissed by clicking outside of the modal
-//    opacity: .1, // Opacity of modal background
-//    in_duration: 300, // Transition in duration
-//    out_duration: 200, // Transition out duration
-//    // ready: function() { alert('Ready'); }, // Callback for Modal open
-//    // complete: function() { alert('Closed'); } // Callback for Modal close
-//  }
-//  );
-
-  this.find('.js-title-nav')._uihooks = {
-    insertElement: function(node, next) {
-      $(node)
-        .hide()
-        .insertBefore(next)
-        .fadeIn();
-    },
-    removeElement: function(node) {
-      $(node).fadeOut(function() {
-        this.remove();
-      });
-    }
-
-  };
 });
 
 Template.ask.helpers({
