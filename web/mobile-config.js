@@ -8,7 +8,7 @@ App.info({
   description: 'Shop with your friends.',
   author: 'Mobile Hackers',
   email: 'itsshwet@gmail.com',
-  website: 'www.shopcast.meteor.com',
+  website: 'www.shopcastdemo.herokuapp.com',
   version: '0.5.0'
 });
 

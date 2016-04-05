@@ -32,17 +32,18 @@ Template.ask.onRendered(function() {
     received : false,
     bill : 0,
   });
+
   Session.set('currentrequestid', Request.findOne({username: requestername})._id); //Fix bug
 
-  $('.modal-trigger').leanModal({
-    dismissible: true, // Modal can be dismissed by clicking outside of the modal
-    opacity: .1, // Opacity of modal background
-    in_duration: 300, // Transition in duration
-    out_duration: 200, // Transition out duration
-    // ready: function() { alert('Ready'); }, // Callback for Modal open
-    // complete: function() { alert('Closed'); } // Callback for Modal close
-  }
-  );
+//  $('.modal-trigger').leanModal({
+//    dismissible: true, // Modal can be dismissed by clicking outside of the modal
+//    opacity: .1, // Opacity of modal background
+//    in_duration: 300, // Transition in duration
+//    out_duration: 200, // Transition out duration
+//    // ready: function() { alert('Ready'); }, // Callback for Modal open
+//    // complete: function() { alert('Closed'); } // Callback for Modal close
+//  }
+//  );
 
   this.find('.js-title-nav')._uihooks = {
     insertElement: function(node, next) {
