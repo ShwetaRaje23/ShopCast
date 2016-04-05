@@ -58,6 +58,8 @@ Router.route('feed');
 
 Router.route('casterFeed');
 
+Router.route('dropoffMap');
+
 Router.route('listsShow', {
   path: '/lists/:_id',
   // subscribe to todos before the page is rendered but don't wait on the

@@ -24,9 +24,22 @@ Template.ask.onRendered(function() {
       userId: Meteor.userId(),
       username: requestername,
       createdAt: new Date(),
-      approved: false
+      approved: false,
+      completed : false,
+      received : false,
+      bill : 0,
     });
     Session.set('currentrequestid', Request.findOne({username: requestername})._id); //Fix bug
+
+    $('.modal-trigger').leanModal({
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .1, // Opacity of modal background
+      in_duration: 300, // Transition in duration
+      out_duration: 200, // Transition out duration
+      // ready: function() { alert('Ready'); }, // Callback for Modal open
+      // complete: function() { alert('Closed'); } // Callback for Modal close
+    }
+    );
   }
 
   this.find('.js-title-nav')._uihooks = {
@@ -60,8 +73,16 @@ Template.ask.helpers({
 
   approved: function(castId) {
     var comp =  Request.findOne({$and: [{userId: Meteor.userId()},{castId: castId["_id"]}]});
-    return comp.approved;
+    if(comp != null)
+      return comp.approved;
+  },
+
+  received: function(castId) {
+    var comp =  Request.findOne({$and: [{userId: Meteor.userId()},{castId: castId["_id"]}]});
+    if(comp != null)
+      return comp.received;
   }
+
 });
 
 var editList = function(list, template) {
@@ -188,6 +209,15 @@ Template.ask.events({
       var itemprice = Catalog.findOne({'location':this.place, 'itemname': $('#itemname').val()}).itemprice * $('#itemquantity').val();
       $('#itemprice').val(itemprice);
   },
+
+  'click .con-recieve': function(event){
+    //alert('click!');
+    Request.update(Session.get('currentrequestid'), {
+      $set: {received: true}
+    });
+    Router.go('/feed')
+  },
+
 
   'submit .js-todo-new': function(event) {
     event.preventDefault();

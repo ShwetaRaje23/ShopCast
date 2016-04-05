@@ -11,7 +11,11 @@
       <div class="content-scrollable list-items">
         <div style="margin-top:80px;">
         {{#if approved this}}
+        {{#if received this}}
+          <h3>Thanks for Shopcasting!!!</h3>
+        {{else}}
           <h3>You already sent your request.</h3>
+        {{/if}}
         {{else}}
         <h2>Add Items</h2>
         <div class="row">
@@ -63,8 +67,24 @@
 
       <div style="margin-top:20px; text-align:center;">
       {{#if approved this}}
+
+      {{#if received this}}
+
+
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Rate Your Experience</a>
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Rate your experience</h4>
+        <p>Add ratings here.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
+    </div>
+      {{else}}
       <button type="submit" class="btn disabled">Approved<i class="material-icons right">done</i></button>
-      <button type="submit" class="btn waves-effect waves-light">Confirm Receipt<i class="material-icons right">done_all</i></button>
+      <button type="submit" class="btn waves-effect waves-light con-recieve">Confirm Receipt<i class="material-icons right">done_all</i></button>
+      {{/if}}
       {{else}}
       <button type="submit" class="btn waves-effect waves-light btn-large send-request">Send Request<i class="material-icons right">send</i></button>
       {{/if}}
