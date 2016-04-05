@@ -15,32 +15,34 @@ Template.ask.onRendered(function() {
     listRenderHold.release();
 
     firstRender = false;
-    var requesteremail = Meteor.user()['emails'][0]['address'];
-    var requestername = requesteremail.substring(0, requesteremail.indexOf('@'));
-
-
-    Request.insert({
-      castId: '',
-      userId: Meteor.userId(),
-      username: requestername,
-      createdAt: new Date(),
-      approved: false,
-      completed : false,
-      received : false,
-      bill : 0,
-    });
-    Session.set('currentrequestid', Request.findOne({username: requestername})._id); //Fix bug
-
-    $('.modal-trigger').leanModal({
-      dismissible: true, // Modal can be dismissed by clicking outside of the modal
-      opacity: .1, // Opacity of modal background
-      in_duration: 300, // Transition in duration
-      out_duration: 200, // Transition out duration
-      // ready: function() { alert('Ready'); }, // Callback for Modal open
-      // complete: function() { alert('Closed'); } // Callback for Modal close
-    }
-    );
   }
+
+
+  var requesteremail = Meteor.user()['emails'][0]['address'];
+  var requestername = requesteremail.substring(0, requesteremail.indexOf('@'));
+
+
+  Request.insert({
+    castId: '',
+    userId: Meteor.userId(),
+    username: requestername,
+    createdAt: new Date(),
+    approved: false,
+    completed : false,
+    received : false,
+    bill : 0,
+  });
+  Session.set('currentrequestid', Request.findOne({username: requestername})._id); //Fix bug
+
+  $('.modal-trigger').leanModal({
+    dismissible: true, // Modal can be dismissed by clicking outside of the modal
+    opacity: .1, // Opacity of modal background
+    in_duration: 300, // Transition in duration
+    out_duration: 200, // Transition out duration
+    // ready: function() { alert('Ready'); }, // Callback for Modal open
+    // complete: function() { alert('Closed'); } // Callback for Modal close
+  }
+  );
 
   this.find('.js-title-nav')._uihooks = {
     insertElement: function(node, next) {
@@ -54,6 +56,7 @@ Template.ask.onRendered(function() {
         this.remove();
       });
     }
+
   };
 });
 
@@ -200,7 +203,7 @@ Template.ask.events({
     Request.update(Session.get('currentrequestid'), {
       $set: {castId: this._id}
     });
-    Router.go('/feed')
+    // Router.go('/feed')
   },
 
   'focus .class-itemprice':function(event){
@@ -215,7 +218,7 @@ Template.ask.events({
     Request.update(Session.get('currentrequestid'), {
       $set: {received: true}
     });
-    Router.go('/feed')
+    // Router.go('/feed')
   },
 
 
@@ -236,12 +239,12 @@ Template.ask.events({
 
     var item = Catalog.findOne({'location': this.place, 'itemname': itemname});
     if(item != null){
-      Catalog.update({'_id': item._id}, {$set: {'itemprice': itemprice/itemquantity} } );  
+      Catalog.update({'_id': item._id}, {$set: {'itemprice': itemprice/itemquantity} } );
     }
     else{
-      Catalog.insert({'location':this.place, 'itemname':itemname, 'itemprice': itemprice/itemquantity});     
+      Catalog.insert({'location':this.place, 'itemname':itemname, 'itemprice': itemprice/itemquantity});
     }
-    
+
     var requesteremail = Meteor.user()['emails'][0]['address'];
     var requestername = requesteremail.substring(0, requesteremail.indexOf('@'));
     console.log(Session.get('currentrequestid'));
@@ -258,7 +261,5 @@ Template.ask.events({
     $('#itemname').val('');
     $('#itemquantity').val('');
     $('#itemprice').val('');
-    //Lists.update(this._id, {$inc: {incompleteCount: 1}});
-    //$input.val('');
   }
 });

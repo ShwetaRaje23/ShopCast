@@ -22,3 +22,4 @@ service-configuration
 simple:rest
 materialize:materialize
 dburles:google-maps
+autopublish
