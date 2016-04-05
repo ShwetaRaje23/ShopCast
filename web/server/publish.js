@@ -36,3 +36,7 @@ Meteor.publish('requests', function(requestId){
 Meteor.publish('requestcast', function(){
 	return Request.find();
 });
+
+Meteor.publish('catalog',function(){
+  return Catalog.find();
+});

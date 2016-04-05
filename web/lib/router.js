@@ -16,7 +16,8 @@ Router.configure({
       Meteor.subscribe('privateLists'),
       Meteor.subscribe('casts'),
       Meteor.subscribe('details'),
-      Meteor.subscribe('requestcast')
+      Meteor.subscribe('requestcast'),
+      Meteor.subscribe('catalog')
     ];
   }
 });

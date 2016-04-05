@@ -19,3 +19,5 @@ Details = new Mongo.Collection("details");
 Broadcast = new Mongo.Collection("broadcast");
 
 Request = new Mongo.Collection("request");
+
+Catalog = new Mongo.Collection("catalog");

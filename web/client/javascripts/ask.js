@@ -182,11 +182,20 @@ Template.ask.events({
     Router.go('/feed')
   },
 
+  'focus .class-itemprice':function(event){
+      //alert('Hello there');
+      console.log(Catalog.findOne({'location':this.place, 'itemname': $('#itemname').val()}));
+      var itemprice = Catalog.findOne({'location':this.place, 'itemname': $('#itemname').val()}).itemprice * $('#itemquantity').val();
+      $('#itemprice').val(itemprice);
+  },
 
   'submit .js-todo-new': function(event) {
     event.preventDefault();
 
     //alert('hey');
+    // var pricecatalog = {'Starbucks':{'Coffee':2, 'Mocha':3},
+    // 'Tindrum':{'Spicy Soba':6, 'Chowmein':7},'Publix':{'Milk':3, 'Eggs':4}};
+
     var itemname = $('#itemname').val();
     var itemquantity = $('#itemquantity').val();
     var itemprice = $('#itemprice').val();
@@ -195,9 +204,14 @@ Template.ask.events({
       return;
     }
 
-    // var $input = $(event.target).find('[type=text]');
-    // if (! $input.val())
-    //   return;
+    var item = Catalog.findOne({'location': this.place, 'itemname': itemname});
+    if(item != null){
+      Catalog.update({'_id': item._id}, {$set: {'itemprice': itemprice/itemquantity} } );  
+    }
+    else{
+      Catalog.insert({'location':this.place, 'itemname':itemname, 'itemprice': itemprice/itemquantity});     
+    }
+    
     var requesteremail = Meteor.user()['emails'][0]['address'];
     var requestername = requesteremail.substring(0, requesteremail.indexOf('@'));
     console.log(Session.get('currentrequestid'));
