@@ -9,7 +9,7 @@
       </nav>
 
       <div class="content-scrollable list-items">
-        <div style="margin-top:80px;">
+        <div style="margin-top:100px;">
         {{#if approved this}}
         {{#if received this}}
           <h3>Thanks for Shopcasting!!!</h3>
@@ -18,8 +18,7 @@
         {{/if}}
         {{else}}
         <h2>Add Items</h2>
-        <div class="row">
-
+        <div class="row" style="margin-top:20px;">
             <form class="col s12 js-todo-new">
               <div class="row">
                 <div class="input-field col s4">
@@ -47,7 +46,6 @@
        {{#with _id}} {{! Establish new data context with only the '_id'
        field. This way, when the 'incompleteCount' field
        changes, we don't re-render the list contents }}
-
       <table class="striped centered responsive-table">
         <thead>
           <tr>
