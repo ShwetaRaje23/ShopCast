@@ -37,6 +37,10 @@ Meteor.publish('requestcast', function(){
 	return Request.find();
 });
 
+Meteor.publish('todoAll', function(){
+	return Todos.find();
+});
+
 Meteor.publish('catalog',function(){
   return Catalog.find();
 });

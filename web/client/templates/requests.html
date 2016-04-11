@@ -7,7 +7,19 @@
               <span class="card-title">Card Title</span>
             </div> -->
             <div class="card-content">
-              <p>{{username}} wants 2 items. Spicy Soba - 1 Nos, Chicken Taco - 1 Nos .</p>
+              <p>{{username}} wants {{itemCount}} items.</p>
+              <ul class="collection">
+              {{#each itemFind}}
+              <li class="collection-item avatar">
+                <i class="material-icons circle">restaurant</i>
+                <span class="title">{{itemname}}</span>
+                <p>Quantity : {{itemquantity}}<br>
+                   Approx Total Price : {{itemprice}}
+                </p>
+                <!-- <a href="#!" class="secondary-content"><i class="material-icons">check_box_outline_blank</i></a> -->
+              </li>
+            {{/each}}
+            </ul>
             </div>
             <div class="card-action">
               {{#if approved}}

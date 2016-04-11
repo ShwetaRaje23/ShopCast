@@ -26,5 +26,14 @@ Template.request.events({
 Template.request.helpers({
   approved: function() {
     return this.approved;
+  },
+
+  itemCount: function() {
+    var x = Todos.find({requestId : this._id}).count();
+    return x;
+  },
+
+  itemFind: function() {
+    return Todos.find({requestId : this._id});
   }
 });
